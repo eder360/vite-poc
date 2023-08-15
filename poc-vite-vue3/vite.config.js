@@ -12,8 +12,9 @@ export default defineConfig({
       // Modules to expose
       exposes: {
           './Button': './src/components/Button.vue',
+          './VuexStore': './src/vuex.js',
       },
-      shared: ['vue']
+      shared: ['vue', 'vuex']
     })
   ],
   build: {

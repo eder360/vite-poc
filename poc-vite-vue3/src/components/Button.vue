@@ -1,22 +1,22 @@
 <template>
   <div class="transparent-counter">
-    <p>Count: {{ count }}</p>
+    <p>Count: {{ counter }}</p>
     <button class="increment-button" @click="incrementCount">Increment</button>
   </div>
 </template>
 
 <script>
+import { mapGetters, mapActions } from "vuex";
+
 export default {
   name: "Button",
-  data() {
-    return {
-      count: 0,
-    };
+  computed: {
+    ...mapGetters([
+      'counter',
+  ]),
   },
   methods: {
-    incrementCount() {
-      this.count++;
-    },
+    ...mapActions(['incrementCount'])
   },
 };
 </script>
